@@ -1,24 +1,18 @@
 import re
-def check password (password):
 
-        return(re.search(r'^. [8,)$', password) and
+def check_password(password):
+    # Check if the password meets all criteria
+    return (
+        re.search(r'^.{8,}$', password) and  # At least 8 characters
+        re.search(r'[A-Z]', password) and    # At least one uppercase letter
+        re.search(r'[a-z]', password) and    # At least one lowercase letter
+        re.search(r'[\W_]', password)        # At least one special character
+    )
 
-        re.search(r' [A-8]',password) and
-
-        re.search(r' [a-z]',password) and
-
-        re.search(r'[\W)',password))
-
-with open('password.txt')as f:
-
-for password in f:
-
-password-password.strip()
-
-if check password (password):
-
-print ("Valid Password: "+password)
-
-else:
-
-print("Invalid Password: "+password)
+with open('password.txt') as f:
+    for password in f:
+        password = password.strip()  # Remove any leading/trailing whitespace
+        if check_password(password):
+            print("Valid Password: " + password)
+        else:
+            print("Invalid Password: " + password)
