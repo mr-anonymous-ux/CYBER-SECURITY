@@ -1,0 +1,24 @@
+import re
+def check password (password):
+
+        return(re.search(r'^. [8,)$', password) and
+
+        re.search(r' [A-8]',password) and
+
+        re.search(r' [a-z]',password) and
+
+        re.search(r'[\W)',password))
+
+with open('password.txt')as f:
+
+for password in f:
+
+password-password.strip()
+
+if check password (password):
+
+print ("Valid Password: "+password)
+
+else:
+
+print("Invalid Password: "+password)
